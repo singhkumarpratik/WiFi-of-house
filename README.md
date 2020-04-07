@@ -3,7 +3,7 @@ A simple web application which allows you to share your WiFi credentials instant
 ## Usage
 1. Clone this repo using `git clone https://github.com/singhkumarpratik/WiFi-of-house`.
 2. Install dependencies using `pip install -r requirements.txt`.
-3. Install `wkhtmltopdf` from [here](https://wkhtmltopdf.org/)
+3. Install `wkhtmltopdf` from [here](https://wkhtmltopdf.org/).
 4. Change the `wkhtmltopdf` path in `app.py`.
 ## Demo
 https://wifi-of-house.herokuapp.com/
