@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap4-neon-glow.min.css') }}">
+    <!-- FontAwesome -->
+    <link href="{{ url_for('static', filename='css/all.min.css') }}" rel="stylesheet">
+    <title>WiFi of House</title>
+    <style>
+        @font-face {
+            font-family: myFirstFont;
+            src: url({{ url_for('static', filename='webfonts/CONSOLA.TTF') }});
+        }
+        .whitegrip{color:#714cdf;}
+        .con{font-family: myFirstFont;}
+        .pCon{
+            font-family: myFirstFont;
+            color: #13a063;    
+        }
+        .authors:hover{
+            color:#13a063;
+        }
+    </style>
+    <link rel="icon" href="{{ url_for('static', filename='images/icon.png') }}">
+  </head>
+  <body>
+    <!-- navbar -->
+    <div class="navCon">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand con" href="{{url_for('hello_world')}}">WiFi of House</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-grip-lines whitegrip"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link con" href="https://github.com/singhkumarpratik/" data-toggle="tooltip" data-placement="bottom" title="Pratik's Github" rel="tooltip">
+                            <i class="fab fa-github"></i> Pratik
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <span data-toggle="modal" data-target="#exampleModal">
+                            <a class="nav-link con" href="#" data-toggle="tooltip" data-placement="bottom" title="F.A.Q" rel="tooltip">
+                                <i class="fas fa-question-circle"></i> F.A.Q
+                            </a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- navbar ends -->
+    <div class="cotainer">
+        <section id="cover">
+            <div id="cover-caption">
+                <div id="container" class="container">
+                    <div class="row">
+                        <div class="col-sm-10 offset-sm-1 text-center">
+                            <h1 class="display-3 con">Create WiFi QR Sign</h1>
+                            <p class="pCon">Now quickly share your WiFi credentials with your friends and family!</p>
+                            <div class="info-form border">
+                                <h3 class="con mx-auto mt-4">Enter Your WiFi credentials</h3>
+                                <i class="fas fa-wifi fa-7x mx-auto mt-4 mb-4" style="color:#714cdf"></i>
+                                <form method="POST">
+                                    <div class="form-group">
+                                      <label class="pCon">SSID</label>
+                                      <input type="text" class="form-control con" placeholder="Enter SSID. This is the name of your WiFi router" name="ssid" required>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="pCon">Password</label>
+                                      <input type="password" class="form-control con" placeholder="Enter Password" name="pwd" required>
+                                    </div>
+                                    <input type="submit" class="btn btn-outline-primary mx-auto mt-2 mb-2 con" value="Generate PDF" name="submit">
+                                  </form>
+                            </div>
+                            <br>        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title con" id="exampleModalLabel">Frequently Asked Questions</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body con">
+                        <p style="margin: 0px;" class="pCon"><b>What does this do?</b></p>
+                        <p>It is a simple web application which allows you to share your WiFi credentials instantly with your friends and family.</p>
+                        <p style="margin: 0px;" class="pCon"><b>How does this work?</b></p>
+                        <p>Our application generates a PDF file of a QR code, which contains your WiFi credentials. You can take a printout of the PDF file. Everyone can then simply scan the QR code to instantly connect to your WiFi.</p>
+                        
+                        <p style="margin: 0px;" class="pCon"><b>Wow. Who made this awesome app?</b></p>
+                        <p>Created by <a href="https://github.com/singhkumarpratik/" class="authors" style="text-decoration: none;">Pratik</a>.</p>
+                        <p style="margin: 0px;" class="pCon"><b>Do you store our WiFi credentials in your database?</b></p>
+                        <p>No, We do not store your WiFi credentials or any other kind of information about you.</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- modal ends -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}" type="text/javascript"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(function () {
+			$("[rel='tooltip']").tooltip();
+		});
+        </script>
+  </body>
+</html>

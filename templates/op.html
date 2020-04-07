@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="pdfkit-orientation" content="Landscape"/>
+
+<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css',_external=True) }}">
+
+    <!-- FontAwesome -->
+    <link href="{{ url_for('static', filename='css/all.min.css',_external=True) }}" rel="stylesheet">
+    
+
+    <title>WiFi of House</title>
+    <style>
+        .whitegrip{color:#714cdf;}
+        .con{font-family: Courier;}
+        .pCon{
+            font-family: Courier;
+            color: #13a063; 
+            font-size: larger;   
+        }
+        .wifiGreen{
+            color: #714cdf;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="cotainer">
+        <section id="cover">
+            <div id="cover-caption">
+                <div id="container" class="container">
+                    <div class="row">
+                        <br><br><br>
+                        <div class="col-sm-10 offset-sm-1 text-center">
+                            <i class="fas fa-wifi fa-7x mx-auto mt-4 mb-4 wifiGreen"></i>
+                            <p class="pCon">WiFi of House</p>
+                            <h6 class="display-4 con">Scan the QR code</h6>
+                            <p class="pCon">To connect to my WiFi</p>
+                            <img src="{{ qrcode(data) }}" alt="" style="margin-bottom: 20px;">
+                            <h4 class="con">SSID:{{ssid}}</h6>
+                            <h4 class="con">Password:{{pwd}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Footer -->
+        <footer class="page-footer font-small blue">
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">
+                <p class="pCon">Get your own WiFi sign at <a href="https://wifi-of-house.herokuapp.com/">www.wifi-of-house.herokuapp.com/</a>
+                </p>
+            </div>
+            <!-- Copyright -->
+        </footer>
+    <!-- Footer -->
+  </body>
+</html>
