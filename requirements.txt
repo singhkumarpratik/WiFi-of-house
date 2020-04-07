@@ -12,7 +12,6 @@ MarkupSafe==1.1.1
 pdfkit==0.6.1
 Pillow==7.1.1
 python-dateutil==1.5
-python-pdf==0.37
 qrcode==6.1
 requests==2.23.0
 six==1.14.0
