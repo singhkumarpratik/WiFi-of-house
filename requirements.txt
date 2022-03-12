@@ -10,7 +10,7 @@ itsdangerous==1.1.0
 Jinja2==2.11.3
 MarkupSafe==1.1.1
 pdfkit==0.6.1
-Pillow==8.1.1
+Pillow==9.0.1
 python-dateutil==1.5
 qrcode==6.1
 requests==2.23.0
